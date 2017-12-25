@@ -17,4 +17,9 @@ public class VoidMethodInterceptor implements MethodInterceptor {
     public boolean onActionIntercepted() {
         return false;
     }
+
+    @Override
+    public boolean onThrowing() {
+        return false;
+    }
 }

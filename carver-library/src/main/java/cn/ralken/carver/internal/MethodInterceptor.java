@@ -21,4 +21,8 @@ public interface MethodInterceptor {
      */
     boolean onActionIntercepted();
 
+    /**
+     * Called when an exception thrown from the interception processing body.
+     */
+    boolean onThrowing();
 }

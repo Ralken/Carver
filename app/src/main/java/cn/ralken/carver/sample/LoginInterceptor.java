@@ -23,6 +23,11 @@ public class LoginInterceptor implements MethodInterceptor {
         return true;
     }
 
+    @Override
+    public boolean onThrowing() {
+        return false;
+    }
+
     private static void uploadAnalysis() {
 
     }
