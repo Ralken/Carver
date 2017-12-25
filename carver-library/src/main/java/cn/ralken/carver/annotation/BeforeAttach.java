@@ -1,14 +1,14 @@
-package cn.ralken.aspectj.annotation;
+package cn.ralken.carver.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import cn.ralken.aspectj.internal.MethodInterceptor;
-import cn.ralken.aspectj.internal.VoidMethodInterceptor;
+import cn.ralken.carver.internal.MethodInterceptor;
+import cn.ralken.carver.internal.VoidMethodInterceptor;
 
-import static cn.ralken.aspectj.annotation.BeforeAttach.Mode.MODE_METHOD_START;
+import static cn.ralken.carver.annotation.BeforeAttach.Mode.MODE_METHOD_START;
 
 /**
  * An annotation which indicates that the  {@link MethodInterceptor} will
