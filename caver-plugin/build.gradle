@@ -1,26 +1,37 @@
-apply plugin: 'com.android.library'
+apply plugin: 'groovy'
+apply plugin: 'maven'
 
-android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
-
-    defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 26
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
+/**
+ * Don't forget setting the cross compiling options(source & target)
+ * because we compile project with high JDK version.
+ * Thus the developers who use low JDK can also use it.
+ */
+compileGroovy {
+    targetCompatibility = JavaVersion.VERSION_1_7
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    options.encoding = "UTF-8"
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:2.3.1'
+
+    compile 'org.aspectj:aspectjtools:1.8.6'
+    compile 'org.aspectj:aspectjrt:1.8.6'
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = 'cn.ralken.mavenrepo'
+version = '1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
 }
