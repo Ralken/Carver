@@ -9,12 +9,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
 import cn.ralken.carver.annotation.BeforeAttach;
+import cn.ralken.carver.annotation.ThrottlePeriod;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -105,11 +107,13 @@ public class MainActivity extends AppCompatActivity
     }
 
     @cn.ralken.carver.annotation.BeforeAttach(interceptor = LoginInterceptor.class, mode = BeforeAttach.Mode.MODE_METHOD_START)
+    @ThrottlePeriod(interval = 5000)
     void testMethodInterception() {
         makeToast("testMethodInterception executing...");
     }
 
     public static void makeToast(String message) {
         Toast.makeText(applicationContext, message, Toast.LENGTH_SHORT).show();
+        Log.d("MainActivity", "toast: " + System.currentTimeMillis());
     }
 }

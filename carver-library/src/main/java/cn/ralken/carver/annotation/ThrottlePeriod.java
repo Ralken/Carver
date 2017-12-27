@@ -5,4 +5,14 @@ package cn.ralken.carver.annotation;
  */
 
 public @interface ThrottlePeriod {
+    int DEFAULT_INTERNAL = 600;
+
+    /**
+     * The interval time in million seconds between each valid execution.
+     *
+     * @return
+     */
+    long interval()
+            default DEFAULT_INTERNAL;
+
 }
