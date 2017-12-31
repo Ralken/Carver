@@ -7,8 +7,6 @@ Unlike dagger and butterknife, Carver is based on aspectj and works at compiling
 
 ## Gradle settings
 
-## Usage
-
 ## License
 
 ```
