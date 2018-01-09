@@ -6,7 +6,7 @@ The idea of Carver is taken from the Spring framework of Java EE. A typical scen
 Unlike dagger and butterknife, Carver is based on aspectj and works at compiling time, it affects the generated classed instead of java source code. If you are interested in considering what it really does, please de-compile the classes and view the source code.
 
 ## Gradle settings
-## Project specification (Jan. 2018)
+## Project specification (Update on 9 Jan. 2018)
 
 
 ## License
