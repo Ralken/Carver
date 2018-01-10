@@ -11,6 +11,7 @@ Unlike dagger and butterknife, Carver is based on aspectj and works at compiling
 ## TO DO 
 * Optimize the user interaction of sample project
 * Publish plugin to Bintray separately
+* Library project: instance management of Interceptor component sub-implementation.
 
 ## License
 
