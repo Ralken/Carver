@@ -7,6 +7,7 @@ Unlike dagger and butterknife, Carver is based on aspectj and works at compiling
 
 ## Gradle settings
 ## Project specification (Update on 9 Jan. 2018)
+The development schedule of this project has to be postponed for some days due to my personal time. 
 
 ## TO DO 
 * Optimize the user interaction of sample project
